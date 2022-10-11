@@ -151,6 +151,7 @@ Then after you connect your board to the USB port and run PuTTY:
 ![image](https://user-images.githubusercontent.com/114200453/194992611-c0c9341b-7408-450d-a189-75698ce599e9.png)
 
 After click **open**, you can see the result printed in the serial console.
+![4567e857ebecb5f4adc4f8deeb7ada8](https://user-images.githubusercontent.com/114200453/194994533-245d634c-108d-4112-b78f-455fa9df0cda.png)
 
 
 
