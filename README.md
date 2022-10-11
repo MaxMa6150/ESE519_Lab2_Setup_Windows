@@ -2,7 +2,7 @@
 University of Pennsylvania, ESE 5190: Intro to Embedded Systems, Lab 2A
 
     Sizhe Ma
-        masizhee@seas.upenn.edu
+        masizhe@seas.upenn.edu
     Tested on:  Thinkpad X1, Windows 10 Pro, Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz   2.11 GHz
 ## Setting Up for SDK on your Windows Machine for Raspberry Pi Pico.
 In this lab, firstly we need to set up laptop/PC for RP2040 development using the official C/C++ SDK to compile and run example code on our board.
