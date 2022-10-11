@@ -120,11 +120,37 @@ After entering "cmake -G "NMake Makefiles" ..", if the command window prompt a h
 2. you did not check "Add path to environment variable" before finishing installing Toolchain. If not, our  Developer Command Prompt will not detect arm none when we setup cmake.
 3. I initially used VS code terminal and it did not work. If you also use VS code terminal, try to download and use Developer Command Prompt in Visual Studio 2022.
 
-If 
+If you successfully run the last two command lines, just wait until the building process is completed.
 
+![image](https://user-images.githubusercontent.com/114200453/194991042-6ab457b0-6d70-4d85-b74c-71eea9c761d5.png)
 
+Then you can find hello_usb.uf2 file in hello_world/usb directories inside your build directory. (pico-examples > build > hello_world > usb)
 
+![image](https://user-images.githubusercontent.com/114200453/194991238-07872c89-853d-4466-a918-4f34ce3b7665.png)
 
+## SERIAL CONSOLE – SCREEN, PUTTY, ETC
+Since there is no screen on Windows OS, we need to download [PuTTY](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows) to see the result printed in the serial console. [Last version of PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) can be downloaded here.
+
+![f3c79a61bf873baa450b1e12dc8e63d](https://user-images.githubusercontent.com/114200453/194991902-cea76f1e-81d0-4998-a7ed-24bd2c0f7788.png)
+
+Before running PuTTY, we neeed to want to find out which serial port your board is using. When you plug your board in to USB on your computer, it connects to a serial port.
+
+You'll use Windows Device Manager to determine which port the board is using. The easiest way to determine which port the board is using is to first check without the board plugged in. Open Device Manager. Click on Ports (COM & LPT). You should find something already in that list with (COM#) after it where # is a number.
+
+Now plug in your board. The Device Manager list will refresh and a new item will appear under Ports (COM & LPT). You'll find a different (COM#) after this item in the list.
+
+![40ef39c9190ea18189e75cdbbe7b61b](https://user-images.githubusercontent.com/114200453/194992086-a9e90145-0c90-41b4-892d-d925bf25f5cd.png)
+
+**Notice the COM number when the list refreshes, sometimes it is not COM3.**
+
+Then after you connect your board to the USB port and run PuTTY:
+1. choose the button next to Serial under **Connection type**.
+2. enter the serial port you found that your board is using in the box under **Serial line**.
+3. enter 115200 in the box under **Speed**.
+
+![image](https://user-images.githubusercontent.com/114200453/194992611-c0c9341b-7408-450d-a189-75698ce599e9.png)
+
+After click **open**, you can see the result printed in the serial console.
 
 
 
