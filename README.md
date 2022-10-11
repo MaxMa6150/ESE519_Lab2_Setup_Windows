@@ -85,9 +85,43 @@ In this section, we will download SDK and examples through Developer Command Pro
 
 ![cdcbc1bc7e45ee6efcc15181131135b](https://user-images.githubusercontent.com/114200453/194988163-9a89c9fa-b2b3-4440-86a9-afaadab34b99.png)
 
-**If you mistakenly downloaded VS code and followed the instruction in Chapter 2 to download SDK and examples, you can skip this part and jump to the section "Building "Hello World" from the Command Line." But before you follow the next section, I highly recommend you to download and use Visual Studio 2022 instead of VS code terminal. Using developer Command Prompt in Visual Studio 2022 is easier for you to set the path to the SDK and build files for the "hello_usb.c" in next step.**
+*If you mistakenly downloaded VS code and followed the instruction in Chapter 2 to download SDK and examples, you can skip this part and jump to the section "Building "Hello World" from the Command Line." But before you follow the next section, I highly recommend you to download and use Visual Studio 2022 instead of VS code terminal. Using developer Command Prompt in Visual Studio 2022 is easier for you to set the path to the SDK and build files for the "hello_usb.c" in next step.*
 
 **The started guide does not include the guide to create files named pico and Downloads, here is the instruction:**
+
+```
+C:\Users> mkdir pico
+C:\Users> cd pico
+C:\Users\pico> mkdir Downloads
+C:\Users\pico> cd Downloads
+```
+
+Then you can follow the guide to get the SDK and examples
+
+## Building "Hello World" From the Command Line
+Then you can set the path to the SDK as follows in a Developer Command Prompt window:
+```
+C:\Users\pico\Downloads> setx PICO_SDK_PATH "..\..\pico-sdk"
+```
+After entering this command line, the command window will prompt a hint information which indicating that the setup for the environment variable is completed. **Now you need to remember to close your current Command Prompt Window and and open a second Developer Command Prompt window where this environment variable will now be set correctly before proceeding.**
+
+Then enter the command lines below:
+'''
+C:\Users\pico\Downloads> cd pico-examples
+C:\Users\pico\Downloads\pico-examples> mkdir build
+C:\Users\pico\Downloads\pico-examples> cd build
+C:\Users\pico\Downloads\pico-examples\build> cmake -G "NMake Makefiles" ..
+C:\Users\pico\Downloads\pico-examples\build> nmake
+'''
+
+After entering "cmake -G "NMake Makefiles" ..", if the command window prompt a hint information which indicating that there is an error "cannot find arm none". There are several reasons:
+
+1. you did not close your current Command Prompt Window and and open a second Developer Command Prompt after setting a path
+2. you did not check "Add path to environment variable" before finishing installing Toolchain. If not, our  Developer Command Prompt will not detect arm none when we setup cmake.
+3. I initially used VS code terminal and it did not work. If you also use VS code terminal, try to download and use Developer Command Prompt in Visual Studio 2022.
+
+If 
+
 
 
 
